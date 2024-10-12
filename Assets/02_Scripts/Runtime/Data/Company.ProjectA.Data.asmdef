@@ -1,0 +1,17 @@
+{
+    "name": "Company.ProjectA.Data",
+    "rootNamespace": "Company.ProjectA.Data",
+    "references": [
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:68d0adf16fa992e4bad581074230efd5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

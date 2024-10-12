@@ -1,0 +1,19 @@
+{
+    "name": "Company.ProjectA.Application",
+    "rootNamespace": "Company.ProjectA.Application",
+    "references": [
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:af62650d0b760df41b95e11341969c26",
+        "GUID:68d0adf16fa992e4bad581074230efd5",
+        "GUID:e0f5cf909c3ec81408f5ca028388d7b6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
