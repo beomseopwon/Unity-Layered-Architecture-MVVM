@@ -6,11 +6,11 @@ namespace Company.ProjectA.Presentation
 {
     public sealed class SampleViewModel
     {
-        private SampleUseCase _sampleUseCase;
+        private ISampleUseCase _sampleUseCase;
         public ReactiveProperty<string> Data { get; private set; } = new ReactiveProperty<string>("Hello World");
 
         [Inject]
-        public SampleViewModel(SampleUseCase sampleUseCase)
+        public SampleViewModel(ISampleUseCase sampleUseCase)
         {
             _sampleUseCase = sampleUseCase;
         }

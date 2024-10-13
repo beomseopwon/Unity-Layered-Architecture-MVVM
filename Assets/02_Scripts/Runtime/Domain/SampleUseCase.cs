@@ -2,7 +2,7 @@ using VContainer;
 
 namespace Company.ProjectA.Domain
 {
-    public sealed class SampleUseCase
+    public sealed class SampleUseCase : ISampleUseCase
     {
         private ISampleRepository _repository;
 
