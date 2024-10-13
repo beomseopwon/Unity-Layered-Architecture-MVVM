@@ -12,17 +12,19 @@ namespace Company.ProjectA.Presentation
         public TextMeshProUGUI Text;
 
         private SampleViewModel _viewModel;
+
         [Inject]
         public void Construct(SampleViewModel viewModel)
         {
             _viewModel = viewModel;
+            _viewModel.Data.Subscribe(x => { Text.text = x; }).AddTo(this);
         }
 
         private void Start()
         {
             Button.OnClickAsObservable().TakeUntil(destroyCancellationToken).Subscribe(x =>
             {
-                Text.text = _viewModel.GetData();
+                _viewModel.GetData();
             });
         }
     }
