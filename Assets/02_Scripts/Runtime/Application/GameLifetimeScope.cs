@@ -1,3 +1,6 @@
+using Company.ProjectA.Data;
+using Company.ProjectA.Domain;
+using Company.ProjectA.Presentation;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -17,6 +20,10 @@ namespace Company.ProjectA.Application
         public bool IsReal = true;
         protected override void Configure(IContainerBuilder builder)
         {
+            RegistPresentation(builder);
+            RegistDomain(builder);
+            RegistData(builder);
+
             if (IsReal)
             {
                 _lifeTimeScope = RealLifeTimeScope;
@@ -27,7 +34,22 @@ namespace Company.ProjectA.Application
                 _lifeTimeScope = MockLifeTimeScope;
 #endif
             }
-            _lifeTimeScope.Build();
+            _lifeTimeScope.Configure(builder);
+        }
+
+        private void RegistPresentation(IContainerBuilder builder)
+        {
+            builder.Register<SampleViewModel>(Lifetime.Singleton);
+        }
+
+        private void RegistDomain(IContainerBuilder builder)
+        {
+            builder.Register<SampleUseCase>(Lifetime.Singleton);
+        }
+
+        private void RegistData(IContainerBuilder builder)
+        {
+            builder.Register<SampleRepository>(Lifetime.Singleton).AsImplementedInterfaces();
         }
     }
 }
