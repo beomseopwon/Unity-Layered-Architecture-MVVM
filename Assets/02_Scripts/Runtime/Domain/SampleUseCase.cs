@@ -14,7 +14,7 @@ namespace Company.ProjectA.Domain
 
         public string GetData()
         {
-            return _repository.GetData();
+            return $"{_repository.GetData()}->Domain Layer";
         }
     }
 }

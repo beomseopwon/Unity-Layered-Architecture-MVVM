@@ -19,7 +19,7 @@ namespace Company.ProjectA.Data
         public string GetData()
         {
             var data = _store.GetData();
-            data =  $"{data}_Repo";
+            data =  $"{data}->Data Layer";
             return data;
         }
     }
