@@ -1,4 +1,4 @@
-# UnityArchitectureSample
+# Unity-Layered-Architecture-MVVM
 
 이 프로젝트의 목표는 유니티에서 Layered Architecture와 MVVM 패턴을 사용한 View 개발에 대한 간단하고 효율적인 접근 방식을 제공 하는 것 입니다.
 
