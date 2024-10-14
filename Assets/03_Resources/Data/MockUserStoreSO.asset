@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5deaf1dd64e55d5479ed31f11336365a, type: 3}
-  m_Name: MockStoreSO
+  m_Name: MockUserStoreSO
   m_EditorClassIdentifier: 
-  Data: Mock Data
+  Data:
+    <Id>k__BackingField: 123
+    <Name>k__BackingField: Mock
+    <Email>k__BackingField: Mock@gmail.com

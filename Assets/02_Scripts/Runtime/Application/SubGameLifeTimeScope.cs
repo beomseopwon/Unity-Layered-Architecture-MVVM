@@ -6,7 +6,7 @@ namespace Company.ProjectA.Application
 {
     public sealed class SubGameLifeTimeScope : MonoBehaviour
     {
-        public RealStoreSO SampleStoreSO;
+        public RealUserStoreSO UserStoreSO;
 
         public void Configure(IContainerBuilder builder)
         {
@@ -15,7 +15,7 @@ namespace Company.ProjectA.Application
         
         private void RegistData(IContainerBuilder builder)
         {
-            builder.RegisterInstance(SampleStoreSO).AsImplementedInterfaces();
+            builder.RegisterInstance(UserStoreSO).AsImplementedInterfaces();
         }
     }
 }
