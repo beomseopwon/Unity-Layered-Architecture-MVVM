@@ -3,9 +3,9 @@ using UnityEngine;
 namespace Company.ProjectA.Data
 {
     [CreateAssetMenu]
-    public sealed class MockStoreSO : RealStoreSO, ISampleStore
+    public sealed class MockUserStoreSO : RealUserStoreSO, IUserStore
     {
-        public override string GetData()
+        public override UserResponseDTO GetUser(int id)
         {
             return Data;
         }
