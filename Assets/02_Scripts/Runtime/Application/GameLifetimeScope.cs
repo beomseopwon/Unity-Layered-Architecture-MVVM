@@ -44,7 +44,7 @@ namespace Company.ProjectA.Application
 
         private void RegistDomain(IContainerBuilder builder)
         {
-            builder.Register<UserUseCase>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<UserUseCase>(Lifetime.Singleton);
         }
 
         private void RegistData(IContainerBuilder builder)

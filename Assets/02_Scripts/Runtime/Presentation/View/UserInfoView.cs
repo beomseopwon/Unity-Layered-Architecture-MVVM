@@ -9,7 +9,9 @@ namespace Company.ProjectA.Presentation
     public sealed class UserInfoView : MonoBehaviour
     {
         public Button Button;
-        public TextMeshProUGUI Text;
+        public TextMeshProUGUI IdText;
+        public TextMeshProUGUI NameText;
+        public TextMeshProUGUI EmailText;
 
         private UserViewModel _viewModel;
 
@@ -17,14 +19,9 @@ namespace Company.ProjectA.Presentation
         public void Construct(UserViewModel viewModel)
         {
             _viewModel = viewModel;
-            _viewModel.UserData.Where(x=> x != null).TakeUntil(destroyCancellationToken).Subscribe(x=> UpdateView() );
-        }
-
-        private void UpdateView()
-        {
-            Text.text = $"Id : {_viewModel.UserData.Value.Id}\n";
-            Text.text += $"Name : {_viewModel.UserData.Value.Name}\n";
-            Text.text += $"Email : {_viewModel.UserData.Value.Email}";
+            _viewModel.Id.TakeUntil(destroyCancellationToken).Subscribe(x => IdText.text = $"Id : {x}");
+            _viewModel.Name.TakeUntil(destroyCancellationToken).Subscribe(x => NameText.text = $"Name : {x}");
+            _viewModel.Email.TakeUntil(destroyCancellationToken).Subscribe(x => EmailText.text = $"Email : {x}");
         }
 
         private void Start()

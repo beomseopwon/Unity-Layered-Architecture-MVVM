@@ -6,19 +6,22 @@ namespace Company.ProjectA.Presentation
 {
     public sealed class UserViewModel
     {
-        private IUserUseCase _useCase;
-        public ReactiveProperty<User> UserData { get; private set; }
-
+        private UserUseCase _useCase;
+        public ReactiveProperty<int> Id { get; private set; } = new ReactiveProperty<int>();
+        public ReactiveProperty<string> Name { get; private set; } = new ReactiveProperty<string>();
+        public ReactiveProperty<string> Email { get; private set; } = new ReactiveProperty<string>();
         [Inject]
-        public UserViewModel(IUserUseCase useCase)
+        public UserViewModel(UserUseCase useCase)
         {
-            UserData = new ReactiveProperty<User>();
             _useCase = useCase;
         }
 
         public void GetUser(int id)
         {
-            UserData.Value = _useCase.GetUser(id);
+            var userData = _useCase.GetUser(id);
+            Id.Value = userData.Id;
+            Name.Value = userData.Name;
+            Email.Value = userData.Email;
         }
     }
 }
